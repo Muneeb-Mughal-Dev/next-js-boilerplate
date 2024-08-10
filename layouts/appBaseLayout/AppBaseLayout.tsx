@@ -3,9 +3,7 @@ import { Suspense } from "react";
 import { useTheme } from "@/hooks";
 import { Loader } from "@/components/ui";
 
-import "@/assets/styles/index.css";
-
-export const Theme = ({ children }: Children) => {
+export const AppBaseLayout = ({ children }: Children) => {
   const { theme } = useTheme();
   return (
     <body className={theme}>

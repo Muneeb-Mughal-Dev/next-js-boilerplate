@@ -1,11 +1,10 @@
 "use-client";
 import type { Metadata } from "next";
 
-import { Theme } from "@/theme/Theme";
+import { AppBaseLayout } from "@/layouts";
 import { LoaderProvider, ThemeProvider } from "@/contexts";
 
-import { Suspense } from "react";
-import { Loader } from "@/components/ui";
+import "@/assets/styles/index.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +16,7 @@ export default function RootLayout({ children }: Readonly<Children>) {
     <html lang="en">
       <ThemeProvider>
         <LoaderProvider>
-          <Theme>
-            <Suspense fallback={<Loader />}>{children}</Suspense>
-          </Theme>
+          <AppBaseLayout>{children}</AppBaseLayout>
         </LoaderProvider>
       </ThemeProvider>
     </html>
